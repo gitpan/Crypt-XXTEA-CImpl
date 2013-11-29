@@ -1,4 +1,9 @@
-int c_long2str(int* v,int lv,int w,char** buf);
-int c_str2long(char* s,int ls,int w,int** res);
-int c_xxtea_encrypt(char* str,int lstr,char* key,int lkey,char** res);
-int c_xxtea_decrypt(char* str,int lstr,char* key,int lkey,char** res);
+#ifndef XXCRYPT_H
+#define XXCRYPT_H
+
+unsigned c_long2str(unsigned* v, unsigned lv, unsigned w, char** buf);
+unsigned c_str2long(char* s, unsigned ls, unsigned w, unsigned** res);
+unsigned c_xxtea_encrypt(char* str, unsigned lstr, char* key, unsigned lkey, char** res);
+unsigned c_xxtea_decrypt(char* str, unsigned lstr, char* key, unsigned lkey, char** res);
+
+#endif

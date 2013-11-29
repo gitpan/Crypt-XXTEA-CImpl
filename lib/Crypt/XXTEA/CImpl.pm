@@ -8,6 +8,14 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 
+# Items to export into callers namespace by default. Note: do not export
+# names by default without a very good reason. Use EXPORT_OK instead.
+# Do not simply export all your public functions/methods/constants.
+
+# This allows declaration	use Crypt::XXTEA::CImpl ':all';
+# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
+# will save memory.
+
 our @EXPORT_OK = qw(
 	xxtea_decrypt
 	xxtea_encrypt
@@ -15,14 +23,18 @@ our @EXPORT_OK = qw(
 	str2long
 );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 require XSLoader;
 XSLoader::load('Crypt::XXTEA::CImpl', $VERSION);
 
+# Preloaded methods go here.
+
+
 
 1;
 __END__
+# Below is stub documentation for your module. You'd better edit it!
 
 =head1 NAME
 
@@ -35,7 +47,7 @@ Crypt::XXTEA::CImpl - Perl extension for encryption arithmetic module.
 		xxtea_encrypt
 	);
 	$crypted = xxtea_encrypt($message,$key);
-	$message = xxtea_encrypt($crypted,$key);
+	$message = xxtea_decrypt($crypted,$key);
 
 =head1 DESCRIPTION
 
